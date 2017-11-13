@@ -1,0 +1,134 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+        html,body{  width: 100%;  height: 100%; overflow: hidden }
+        *{  margin: 0;  padding: 0;  }
+        img{  height: 100%;  width: auto;  max-width: 100%; display: block;margin: 0 auto }
+        .content{  width: 100%;height: 100%}
+        .main{
+            width: 300px;
+            height:300px;
+            margin: 200px auto;
+            perspective:800px;
+            -webkit-perspective:800px;
+            /*其子元素都会获得透视效果（使用了3D变换的元素）*/
+        }
+        .box{
+            width: 300px;
+            height:300px;
+            position: absolute;
+            left: 0;
+            top:0;
+            transform-style: preserve-3d;
+            /*表示所有子元素在3D空间中呈现*/
+        }
+        .page1{
+            width: 300px;
+            height:300px;
+            position: absolute;
+            left: 0;
+            top:0;
+        }
+        .page2{
+            width: 300px;
+            height:300px;
+            position: absolute;
+            left: 0;
+            top:0;
+            transform: rotateY(90deg);
+            transform-origin: left;
+        }
+        .page3{
+            width: 300px;
+            height:300px;
+            position: absolute;
+            left: 0;
+            top:0;
+            transform: rotateY(-90deg);
+            transform-origin: right;
+        }
+        .page4{
+            width: 300px;
+            height:300px;
+            position: absolute;
+            left: 0;
+            top:0;
+            transform: rotateX(90deg);
+            transform-origin: bottom;
+        }
+        .page5{
+            width: 300px;
+            height:300px;
+            position: absolute;
+            left: 0;
+            top:0;
+            transform: rotateX(-90deg);
+            transform-origin: top;
+        }
+        .page6{
+            width: 300px;
+            height:300px;
+            position: absolute;
+            left: 0;
+            top:0;
+            transform: translateZ(-300px);
+        }
+        .box{ animation: move-start 15s linear infinite; transform-origin: 50% 50% -150px;}
+        @keyframes move-start {
+            0% {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+            10% {
+                transform: rotateX(0deg) rotateY(180deg);
+            }
+            20% {
+                transform: rotateX(-180deg) rotateY(180deg);
+            }
+            30% {
+                transform: rotateX(-360deg) rotateY(180deg);
+            }
+            40% {
+                transform: rotateX(-360deg) rotateY(360deg);
+            }
+            50% {
+                transform: rotateX(-180deg) rotateY(360deg);
+            }
+            60% {
+                transform: rotateX(90deg) rotateY(180deg);
+            }
+            70% {
+                transform: rotateX(0deg) rotateY(180deg);
+            }
+            80% {
+                transform: rotateX(90deg) rotateY(90deg);
+            }
+            90% {
+                transform: rotateX(90deg) rotateY(0deg);
+            }
+            100% {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!--内容-->
+<div class="content">
+    <div class="main">
+        <div class="box">
+                <div class="page1"><img src="images/img1.jpeg" alt=""></div>
+                <div class="page2"><img src="images/img2.jpeg" alt=""></div>
+                <div class="page3"><img src="images/img3.jpeg" alt=""></div>
+                <div class="page4"><img src="images/img4.jpeg" alt=""></div>
+                <div class="page5"><img src="images/img5.jpeg" alt=""></div>
+                <div class="page6"><img src="images/img6.jpeg" alt=""></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
